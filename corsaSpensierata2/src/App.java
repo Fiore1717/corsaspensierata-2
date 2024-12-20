@@ -1,5 +1,6 @@
 
-// PASSO 2: AZIONI CASUALI CORRIDORI
+// PASSO 2 AGGIORNATO
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -17,10 +18,14 @@ public class App {
 
         System.out.println("Percorso generato:");
         // Genero il percorso in maniera casuale in base all'input dell'utente
-        for (int i = 0; i < lunghezzaPercorso; i++) {
-            String ostacolo = percorso[r.nextInt(percorso.length)];
-            System.out.print(ostacolo + " ");
+        ArrayList<String>ostacolo = new ArrayList<>();
+        for (int i=0; i<lunghezzaPercorso; i++) {    
+        ostacolo.add(percorso[r.nextInt(percorso.length)]);        
         }
+        for (int i=0; i<ostacolo.size();i++) {
+         System.out.print(ostacolo.get(i) + " ");
+        }
+
         System.out.println();
         int numeroCorridori = 5;
         int turno = 1;
