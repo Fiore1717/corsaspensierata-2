@@ -1,18 +1,55 @@
-## Getting Started
+Scrivere un programma che simula una corsa tra 5 corridori che non hanno tanta voglia di "pensare".
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+All'avvio del programma viene generato in maniera casuale un percorso fatto di più elementi (chiedere all'utente di quanti elementi sarà composto il percorso). Ogni elemento è a scelta tra:
 
-## Folder Structure
+strada
+buca
+muro
+piscina
+I 5 corridori dovranno superare il percorso, scegliendo in maniera casuale (quindi in maniera "spensierata") una delle seguenti azioni:
 
-The workspace contains two folders by default, where:
+corri
+salta
+arrampicati
+nuota
+Il corridore supererà un elemento del percorso solo se "sceglie" l'azione giusta (ad es. per superare la buca bisogna saltare)
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Simulare la gara mostrando per ogni corridore le azioni scelte e il numero di elementi superati.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Evidenziare le azioni "corrette" (cioè quelle che hanno permesso di superare l'elemento) in qualche modo, ad esempio convertendole in maiuscolo.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+La gara termina quando tutti i corridori sono arrivati al traguardo
 
-## Dependency Management
+Al termine della gara mostrare la classifica finale (vince chi impiega meno turni)
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Esempio:
+
+Percorso: ["buca", "muro", "strada"]
+
+Turno 1:
+
+c1: ["corri"] - elementi superati: 0
+
+c2: ["SALTA"] - elementi superati: 1
+
+c3: ["nuota"] - elementi superati: 0
+
+Turno 2:
+
+c1: ["corri","SALTA"] - elementi superati: 1
+
+c2: ["SALTA","ARRAMPICATI"] - elementi superati: 2
+
+c3: ["nuota","nuota"] - elementi superati: 0
+
+Turno 3:
+
+c1: ["corri","SALTA","ARRAMPICATI"] - elementi superati: 2
+
+c2: ["SALTA","ARRAMPICATI","CORRI"] - elementi superati: 3
+
+c3: ["nuota","nuota","SALTA"] - elementi superati: 1
+
+Vince il corridore 2
+
+(il programma continua fino a quando non arrivano tutti i corridori)

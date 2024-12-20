@@ -1,7 +1,7 @@
-// PASSO 1: GENERAZIONE PERCORSO
+
+// PASSO 2: AZIONI CASUALI CORRIDORI
 import java.util.Random;
 import java.util.Scanner;
-
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -10,16 +10,32 @@ public class App {
         System.out.println("La gara ha inizio!");
         System.out.println();
         String[] percorso = { "strada", "buca", "muro", "piscina" };
-        
+        String[] azioni = { "corri", "salta", "arrampicati", "nuota" };
+
         System.out.println("Di quanti elementi deve essere composto il percorso?");
-        int lunghezzaPercorso = sc.nextInt();        
-       
+        int lunghezzaPercorso = sc.nextInt();
+
         System.out.println("Percorso generato:");
         // Genero il percorso in maniera casuale in base all'input dell'utente
-            for (int i = 0; i <lunghezzaPercorso; i++) {
-                String ostacolo = percorso[r.nextInt(percorso.length)];
-                System.out.print(ostacolo + " ");                
+        for (int i = 0; i < lunghezzaPercorso; i++) {
+            String ostacolo = percorso[r.nextInt(percorso.length)];
+            System.out.print(ostacolo + " ");
+        }
+        System.out.println();
+        int numeroCorridori = 5;
+        int turno = 1;
+        boolean tuttiArrivati = false;
+
+        while (!tuttiArrivati) {
+            System.out.println("Turno n° : " + (turno++));
+            for (int i=0; i<numeroCorridori; i++) {
+            String azioneScelta = azioni[r.nextInt(azioni.length)];
+            System.out.println("corridore n°" + (i+1) + " : " +azioneScelta);
             }
-        sc.close();         
+            tuttiArrivati = true;
+        }
+
+        sc.close();
+
     }
 }
